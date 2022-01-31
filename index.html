@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>What is canvas?</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +16,256 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<H1>canvas</H1>					
+				</section>
+				<section>
+					<section>
+					    <h3>Games</h3>
+					    <img src="./assets/game.jpg" />
+				    </section>
+					<section>
+					    <h3>Charts</h3>
+					    <img src="./assets/charts.png" />
+				    </section>
+					<section>
+					    <h3>Images</h3>
+					    <img src="./assets/images.png" />
+				    </section>
+					<section>
+					    <h3>Effects</h3>
+					    <img src="./assets/pasted image 0.png" />
+				    </section>
+				</section>		
+
+				<section>
+					<h3>It's all</h3>
+						<h2>canvas</h2>					
+				</section>
+				<section>
+
+					<section>
+						<h3>What is canvas?</h3>
+					    <p>
+							The HTML canvas element is used to draw graphics, on the fly, via JavaScript.
+							The canvas element is only a container for graphics.							
+							</p>						
+					</section>
+					
+					<section>
+					    <h3>History</h3>					    
+					    <p>
+						The canvas element was first introduced in 2004 by Apple in the WebKit
+						movement for Mac OS X with its use in Dashboard and Safari
+						applications. The missing canvas issue in IE was fixed by Google,
+						which issued a compensation for an extension written in JavaScript
+						called ExplorerCanvas.
+					    </p>
+				    </section>					
+
+				</section>
+
+				<section>
+					<section>
+						<h3>How to use canvas?</h3>
+					</section>
+					
+					<section>
+					    <h3>Add to HTML</h3>					    
+					    <pre style="font-size: 18px">
+							<code data-trim data-noescape>
+								<script type="text/template">
+									<canvas id="canvas"></canvas>								
+								</script>
+							</code>
+						</pre>
+					</section>
+
+					<section>
+					    <h3>Find element in JS</h3>					    
+					    <pre style="font-size: 18px">
+							<code data-trim data-noescape>
+								<script type="text/template">
+									const canvas = document.getElementById('canvas');
+									const ctx = canvas.getContext('2d');								
+								</script>
+							</code>
+						</pre>
+					</section>
+
+					<section>
+					    <h3>Add a style attribute</h3>
+						<p>By default, the canvas element has no border and no content.
+						</p>										    
+					    <pre style="font-size: 16px">
+							<code data-trim data-noescape>
+								<script type="text/template">
+									<canvas id="canvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+								</script>
+							</code>
+						</pre>
+					</section>
+
+					<section>
+					    <h3>And ... it's all</h3>
+						<p>You can make masterpieces! :)
+						</p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h3>simple shapes</h3>						
+					</section>
+					<section>
+						<h3>Canvas Coordinates</h3>												
+						<img src="./assets/canvas-coordinates.png" />
+					</section>
+					<section>
+					    <h3>Draw a Line</h3>
+						<img src="./assets/Line.png" />								    
+					    <pre style="font-size: 16px">
+							<code data-trim data-noescape>
+								<script type="text/template">									
+									const canvas = document.getElementById("canvas");
+									const ctx = canvas.getContext("2d");
+									ctx.moveTo(0, 0);
+									ctx.lineTo(200, 100);
+									ctx.stroke();							
+								</script>
+							</code>
+						</pre>						
+					</section>
+
+					<section>
+					    <h3>Draw a Circle</h3>
+						<img src="./assets/circle.png"/>			    
+					    <pre style="font-size: 16px">
+							<code data-trim data-noescape>
+								<script type="text/template">									
+									const canvas = document.getElementById("myCanvas");
+									const ctx = canvas.getContext("2d");
+									ctx.beginPath();
+									ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+									ctx.stroke();																										
+								</script>
+							</code>
+						</pre>						
+					</section>
+
+					<section>
+					    <h3>Draw a green rectangle</h3>	
+						<img src="./assets/rectangle.png" />									    
+					    <pre style="font-size: 16px">
+							<code data-trim data-noescape>
+								<script type="text/template">									
+									const canvas = document.getElementById("canvas");
+									const ctx = canvas.getContext("2d");
+									ctx.fillStyle = 'green';
+									ctx.fillRect(10, 10, 150, 100);																									
+								</script>
+							</code>
+						</pre>						
+					</section>
+
+					<section>
+					    <h3>Drawing Text on the Canvas</h3>
+						<p>
+							To draw text on a canvas, the most important property and methods are:
+						</p> 
+							<ul style="font-size: 26px">
+								<li>font  -  defines the font properties for the text</li>
+								<li>fillText(text,x,y)  -  draws "filled" text on the canvas</li>
+								<li>strokeText(text,x,y)  -  draws text on the canvas (no fill)</li>
+							</ul>										    
+					    <pre style="font-size: 16px">
+							<code data-trim data-noescape>
+								<script type="text/template">									
+									const canvas = document.getElementById("canvas");
+									const ctx = canvas.getContext("2d");
+									ctx.font = "30px Arial";
+									ctx.fillText("Hello World", 10, 50);																								
+								</script>
+							</code>
+						</pre>
+						<img src="./assets/words.png"/>
+					</section>
+
+					<section>
+					    <h3>Drawing images</h3>						
+					    <pre style="font-size: 16px">
+							<code data-trim data-noescape>
+								<script type="text/template">
+									window.onload = function() {
+										const canvas = document.getElementById("canvas");
+										const ctx = canvas.getContext("2d");
+										const img = document.getElementById("scream");
+										ctx.drawImage(img, 10, 10);
+									  };
+								</script>
+							</code>
+						</pre>
+						<img height="250px" src="./assets/canvas-pic.jpg"/>
+					</section>
+
+				</section>
+				<section>
+					<section>
+						<h3>Transformations</h3>
+						<ul>
+							<li>scale()</li>
+							<li>rotate()</li>
+							<li>translate()</li>
+							<li>transform()</li>
+							<li>setTransform()</li>							
+						</ul>
+					</section>
+					
+				</section>
+				<section>
+					<section>
+						<h3>Drawing paths</h3>																	
+					</section>
+					<section>
+						<p>To make shapes using paths, we take some extra steps:</p>
+						<ul>
+							<li>First, you create the path.</li>
+							<li>Then you use drawing commands to draw into the path.</li>
+							<li>Once the path has been created, you can stroke or fill the path to render it.</li>
+						</ul>	
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Animations</h3>
+						<ul>
+							<li>setInterval()</li>
+							<li>setTimeout()</li>
+							<li>requestAnimationFrame(callback)</li>
+							<img height="200px" src="./assets/1_tumb_6601.gif"/>
+						</ul>						
+					</section>
+					<section>
+						<h3>Via js canvas supports mouse events and keyboard events.</h3>
+						<ul>
+							<li>canvas.addEventListener("mousedown",doMouseDown,false);</li>
+							<li>canvas.addEventListener('mousemove', doMouseMove,false);</li>
+							<li>canvas.addEventListener('mouseup',doMouseUp, false);</li>
+							<li>window.addEventListener('keydown', doKeyDown,true);</li>
+							<li>canvas.addEventListener('keydown', doKeyDown,true);</li>
+							<li>and ets...</li>						
+						</ul>	
+					</section>
+				</section>
+				<section>
+					<h3>Summary</h3>
+					<p>						
+					HTML-5 canvas provides an easy and powerful option to draw graphics using JavaScript. It can be used to draw
+					graphs, make photo compositions, or do simple (and not so simple) animations.					
+					</p>
+				</section>
 			</div>
 		</div>
 
